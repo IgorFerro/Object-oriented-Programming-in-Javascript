@@ -16,8 +16,9 @@ const circle = {
 
 circle.draw();
 */
+/////////////////////////////////////////////////////////////
 //Factory Function
-
+/*
 function createCircle(radius){
     return {
         radius,
@@ -38,3 +39,26 @@ function Circle(radius){
     }
 }
 const another = new Circle(1);
+*/
+////////////////////////////////////////////////////////////////
+//Value vs Reference Types
+
+/*Value Types        References Type
+Number               Object 
+String               Function
+Boolean              Array
+Symbol
+undefined
+null*/ 
+
+// Primitives are copied by their value
+//Objects are copied by their reference
+
+let obj = {value: 10};
+
+function increase(obj){
+    obj.value++;
+}
+
+increase(obj);
+console.log(obj);
