@@ -66,7 +66,7 @@ console.log(obj);
 ///////////////////////////////////////////////////////////
 //Adding or Removing Properties
 //Constructor Function
-function Circle(radius){
+/*function Circle(radius){
     this.radius= radius;
     this.draw= function(){
         console.log('draw');
@@ -85,11 +85,11 @@ circle.propertyName = {x:1};
 
 //Delete a property
 delete circle['location'];
-
+*/
 /////////////////////////////////////////////////////////////
 //Enumerating Properties
 //Constructor Function
-function Circle(radius){
+/*function Circle(radius){
     this.radius= radius;
     this.draw= function(){
         console.log('draw');
@@ -110,4 +110,31 @@ const keys = Object.keys(circle);
 console.log(keys);
 //Check the existing property or a method
 if('radius' in circle)
-console.log('Circle  has a radius');
+console.log('Circle  has a radius');*/
+
+/////////////////////////////////////////////////////////
+//Abstraction: Hide the details and Show the essentials
+
+//Constructor Function
+function Circle(radius){
+     this.radius= radius;
+
+     //Change for let(private)
+    //this.defaultLocation = {x:0, y:0};
+
+    let defaultLocation = {x:0, y:0};
+
+    //Change for let(private)
+    //this.computeOptimumLocation = function(factor){}
+    let computeOptimumLocation = function(factor){}
+
+    this.draw= function(){
+   
+     computeOptimumLocation(0.1);
+
+        console.log('draw');
+    }
+}
+//Object
+const circle = new Circle(10);
+circle.draw();
