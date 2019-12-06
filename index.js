@@ -65,7 +65,7 @@ console.log(obj);
 */
 ///////////////////////////////////////////////////////////
 //Adding or Removing Properties
-//Constroctur Function
+//Constructor Function
 function Circle(radius){
     this.radius= radius;
     this.draw= function(){
@@ -88,13 +88,26 @@ delete circle['location'];
 
 /////////////////////////////////////////////////////////////
 //Enumerating Properties
-//Constroctur Function
+//Constructor Function
 function Circle(radius){
     this.radius= radius;
     this.draw= function(){
         console.log('draw');
     }
 }
-
 //Object
 const circle = new Circle(10);
+
+
+//Enumerating all the members of the Object
+for(let key in circle){
+    if(typeof circle[key] !=='function')
+    console.log(key, circle[key]);
+}
+
+//All the Keys from Object
+const keys = Object.keys(circle);
+console.log(keys);
+//Check the existing property or a method
+if('radius' in circle)
+console.log('Circle  has a radius');
