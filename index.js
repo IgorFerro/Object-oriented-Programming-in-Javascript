@@ -116,7 +116,7 @@ console.log('Circle  has a radius');*/
 //Abstraction: Hide the details and Show the essentials
 
 //Constructor Function
-function Circle(radius){
+/*function Circle(radius){
      this.radius= radius;
 
      //Change for let(private)
@@ -137,4 +137,39 @@ function Circle(radius){
 }
 //Object
 const circle = new Circle(10);
+circle.draw();*/
+////////////////////////////////////////////////////////////////
+//Getter and Setters
+function Circle(radius){
+    this.radius= radius;
+
+   let defaultLocation = {x:0, y:0};
+
+   //1
+   this.getDefaultLocation = function(){
+       return defaultLocation;
+   };
+
+   this.draw= function(){
+   console.log('draw');}
+}
+
+Object.defineProperty(this,'defaultLocation', {
+   get: function(){
+       return defaultLocation;
+   },
+   set: function(value){
+       if(!value.x || !value.y)
+       throw new Error('Invalid location.');
+       defaultLocation = value;
+   } 
+})
+//Object
+const circle = new Circle(10);
+
+//1
+//circle.getDefaultLocation();
+//circle.getDefaultLocation;
+circle.defaultLocation = 1;
 circle.draw();
+
