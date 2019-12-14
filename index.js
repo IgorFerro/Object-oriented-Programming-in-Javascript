@@ -231,7 +231,7 @@ console.log(person);
 */
 //////////////////////////////////////
 //Prototype vs instace
-
+/*
 function Circle(radius){
     //Instance Members
     this.radius=radius;
@@ -253,8 +253,30 @@ const c2 = new Circle(2);
 Circle.prototype.toString = function(){
     return 'Circle with radius' + this.radius;
 }
+*/
+//Iterating Instance and Prototype Members
+function Circle(radius){
+    //Instance Members
+    this.radius=radius;
 
+    this.move =function(){
+        this.draw();
+        console.log('move');
+    }
+}
 
+const c1 = new Circle(1);
+
+//Prototype members
+Circle.prototype.draw = function(){
+    console.log('draw')
+}
+
+//Returns instance members
+    console.log(Object.keys(c1));
+//Return All Members (Instance + Prototype)
+for (let key in c1) console.log(key);
+//Avoid Extending the Built-in Objects
 
 
 
