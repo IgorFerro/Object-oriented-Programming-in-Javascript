@@ -178,6 +178,7 @@ circle.draw();
 //Solution Stopwacth
 
 //Constructor
+/*
 function Stopwacth(){
 let startTime, endTime, running, duration = 0;
 
@@ -212,6 +213,48 @@ Object.defineProperty(this, 'duration', {
 get: function() {return duration; }
 });
 }
+*/
+///////////////////////////////////////////////////////////////////////////////////
+//Prototypical Inheritance= A prototype is a just regular object
+//Objects created by a given constructor will have the same prototype
+//Property Descriptors
+/*
+let person = {name: 'IGOR'};
+Object.defineProperty(person, 'name',{
+    writable:false,
+    enumerable:true,
+    configurable:false
+
+});
+delete person.name
+console.log(person);
+*/
+//////////////////////////////////////
+//Prototype vs instace
+
+function Circle(radius){
+    //Instance Members
+    this.radius=radius;
+
+    this.move =function(){
+        this.draw();
+        console.log('move');
+    }
+}
+
+//Prototype members
+Circle.prototype.draw = function(){
+    console.log('draw')
+}
+
+const c1 = new Circle(1);
+const c2 = new Circle(2);
+
+Circle.prototype.toString = function(){
+    return 'Circle with radius' + this.radius;
+}
+
+
 
 
 
