@@ -254,6 +254,7 @@ Circle.prototype.toString = function(){
     return 'Circle with radius' + this.radius;
 }
 */
+/*
 //Iterating Instance and Prototype Members
 function Circle(radius){
     //Instance Members
@@ -275,45 +276,74 @@ Circle.prototype.draw = function(){
 //Returns instance members
     console.log(Object.keys(c1));
 //Return All Members (Instance + Prototype)
-for (let key in c1) console.log(key);
+for (let key in c1) console.log(key);*/
+
 //////////////////////////////////////////////////////////////////////
 //Avoid Extending the Built-in Objects
+/*Array.prototype.shuffle = function(){
+
+}
+
+const array = [];
+array.shuffle();
+*/
+//OBS don't modify objects you don't own!
+////////////////////////////////////////////////////////////////////////////////
+//Exercise
+
+//Constructor
+
+function Stopwatch(){
+let startTime, endTime, running, duration = 0;
+
+Object.defineProperty(this, 'duration', {
+get: function() {return duration; },
+set: function(value){duration = value};
+});
 
 
+Object.defineProperty(this, 'startTime', {
+get: function() {return startTime; }
+});
 
 
+Object.defineProperty(this, 'endTime', {
+get: function() {return endTime; }
+});
 
+    
+Object.defineProperty(this, 'running', {
+get: function() {return running; }
+});
 
+Stopwatch.prototype.start = function(){
+    if(this.running)
+    throw new Error('Stopwatch has already started.'); 
+ 
+    this.running = true;
+ 
+    this.startTime = new Date();
+ };
+ 
+ Stopwacth.prototypes.stop = function(){
+   if(!this.running)
+   throw new Error('Stopwatch is not started');
+ 
+   this.running = false;
+   this.endTime = new Date();
+ 
+   const seconds = (endTime.getTime() - startTime.getTime()) / 1000;
+   this.duration +=seconds;
+ };
+ 
+ Stopwacth.prototype.reset = function(){
+ this.startTime = null;
+ this.endTime = null;
+ this.running = false;
+ this.duration = 0;
+ };
+ const sw =new Stopwatch();
+ sw.duration =10;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ //OBS:. Premature optimization is the root of all evils
 }
