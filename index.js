@@ -457,7 +457,7 @@ function Square(size){
 */
 //////////////////////////////////////////////////////////
 //5. Method Overriding
-    function extend(Child,Parent){
+    /*function extend(Child,Parent){
         Child.prototype =Object.create(Parent.prototype);
         Child.prototype.constructor = Child;
        }
@@ -480,7 +480,58 @@ function Square(size){
         console.log('Duplicate circle')
     }
 
-    const c = new Circle();
+    const c = new Circle();*/
+///////////////////////////////////////////////////////////////////
+//6.Polymorphism
+function extend(Child,Parent){
+    Child.prototype =Object.create(Parent.prototype);
+    Child.prototype.constructor = Child;
+   }
+
+   function Shape(){
+}
+
+Shape.prototype.duplicate =function(){
+    console.log('Duplicate')
+}
+
+function Circle(){
+
+}
+
+extend(Circle, Shape);
+
+Circle.prototype.duplicate =function(){
+    Shape.prototype.duplicate.call(this);
+    console.log('Duplicate circle')
+}
+
+function Square(){
+}
+
+extend(Square, Shape);
+
+Square.prototype.duplicate =function(){
+    console.log('Duplicate square')
+}
+ const shapes = [
+   new Circle(),
+   new Square()
+ ]
+
+for (let shape of shapes){
+    shape.duplicate();
+}
+
+//OBS:. Avoid creating inheritance hierarchies. Favor Composition over inheritance
+
+
+
+
+
+
+
+
     
 
 
