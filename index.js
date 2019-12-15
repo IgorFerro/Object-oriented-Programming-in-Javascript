@@ -421,7 +421,7 @@ const s = new Shape();
 const c= new Circle(1,'red');*/
 ///////////////////////////////////////////////////////////
 //4. Intermediate Function Inheritance
-function Shape(color){
+/*function Shape(color){
     this.color =color;
     }
     
@@ -454,6 +454,34 @@ function Shape(color){
 function Square(size){
     this.size = size;
 }
+*/
+//////////////////////////////////////////////////////////
+//5. Method Overriding
+    function extend(Child,Parent){
+        Child.prototype =Object.create(Parent.prototype);
+        Child.prototype.constructor = Child;
+       }
+
+       function Shape(){
+    }
+    
+    Shape.prototype.duplicate =function(){
+        console.log('Duplicate')
+    }
+
+    function Circle(){
+
+    }
+
+    extend(Circle, Shape);
+
+    Circle.prototype.duplicate =function(){
+        Shape.prototype.duplicate.call(this);
+        console.log('Duplicate circle')
+    }
+
+    const c = new Circle();
+    
 
 
 
