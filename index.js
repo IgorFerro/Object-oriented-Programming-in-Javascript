@@ -483,7 +483,7 @@ function Square(size){
     const c = new Circle();*/
 ///////////////////////////////////////////////////////////////////
 //6.Polymorphism
-function extend(Child,Parent){
+/*function extend(Child,Parent){
     Child.prototype =Object.create(Parent.prototype);
     Child.prototype.constructor = Child;
    }
@@ -524,6 +524,54 @@ for (let shape of shapes){
 }
 
 //OBS:. Avoid creating inheritance hierarchies. Favor Composition over inheritance
+*/
+//////////////////////////////////////////////////////////////////////////////
+//7. Mixins
+function mixin(target, ...sources){
+    Object.assign(target, ...sources)
+}
+
+const canEat ={
+    eat: function(){
+        this.hunger--;
+        console.log('eating');
+    }
+};
+
+const canWalk = {
+    walk: function(){
+        console.log('walking');
+    }
+};
+
+const canSwim ={
+    swim: function(){
+        console.log('swim');
+    }
+}
+
+function Person(){
+}
+
+mixin(Person.prototype, canEat, canWalk);
+const person = new Person();
+console.log(person);
+
+function Goldfish(){
+    }
+
+    mixin(Goldfish.prototype, canEat,canSwim);
+const goldfish = new Goldfish();
+console.log(goldfish);
+
+
+
+
+
+
+
+
+
 
 
 
