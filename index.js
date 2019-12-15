@@ -350,7 +350,7 @@ Stopwatch.prototype.start = function(){
 //////////////////////////////////////////////////////////////////////////
 //4- Prototypical Inheritance
 //1.Creating Your Own Prototypical Inheritance
-
+/*
 function Shape(){
 
 }
@@ -371,6 +371,7 @@ Circle.prototype.draw = function(){
 
 const s = new Shape();
 const c= new Circle(1);
+*/
 //////////////////////////////////////////////////////////////
 //2.Resetting the Constructor
 function Shape(){
@@ -386,6 +387,7 @@ function Circle(radius){
 }
 
 Circle.prototype =Object.create(Shape.prototype);
+Circle.prototype.constructor = Circle;
 
 Circle.prototype.draw = function(){
     console.log('draw');
