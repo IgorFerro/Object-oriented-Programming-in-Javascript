@@ -397,7 +397,7 @@ const s = new Shape();
 const c= new Circle(1);*/
 ///////////////////////////////////////////////////
 //3.Calling the Super Constructor
-function Shape(color){
+/*function Shape(color){
 this.color =color;
 }
 
@@ -418,7 +418,54 @@ Circle.prototype.draw = function(){
 }
 
 const s = new Shape();
-const c= new Circle(1,'red');
+const c= new Circle(1,'red');*/
+///////////////////////////////////////////////////////////
+//4. Intermediate Function Inheritance
+function Shape(color){
+    this.color =color;
+    }
+    
+    Shape.prototype.duplicate = function(){
+        console.log('duplicate');
+    }
+    
+    function extend(Child,Parent){
+        Child.prototype =Object.create(Parent.prototype);
+        Child.prototype.constructor = Child;
+       }
+    
+    function Circle(radius,color){
+        this.radius= radius;
+        Shape.call(this, color)
+    }
+    
+   extend(Circle, Shape);
+
+    Circle.prototype.draw = function(){
+        console.log('draw');
+    }
+    
+
+   extend(Shape,Square);
+
+    const s = new Shape();
+    const c= new Circle(1,'red');
+
+function Square(size){
+    this.size = size;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
