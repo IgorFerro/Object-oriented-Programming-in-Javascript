@@ -564,8 +564,8 @@ function Goldfish(){
 const goldfish = new Goldfish();
 console.log(goldfish);*/
 //////////////////////////////////////////////////////////////////////////////
-///Prototypical Exercise
-function HtmlElement(){
+///11- Prototypical Exercise
+/*function HtmlElement(){
 this.click = function(){
     console.log('clicked')
 }
@@ -587,7 +587,45 @@ function HtmlSelectElement(items = []){
     }
 }
 
-   HtmlSelectElement.prototype =new   HtmlElement();
+   HtmlSelectElement.prototype =new   HtmlElement();*/
+///////////////////////////////////////////////////////////////////
+///12- Exercise- Polymorphism
+this.render = function(){
+    return`<select>${this.Map(item=>`
+    <option>${item}</opttion>`).join('')}
+    </select>`;
+}
+
+function HtmlImageElement(src){
+    this.src=src;
+
+    this.render =function(){
+        return`<img src="${this.src}"/>`
+    }
+}
+HtmlImageElement.prototype=new HTMLElement();
+HtmlImageElement.prototype.constructor= HtmlImageElement;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
