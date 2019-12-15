@@ -292,7 +292,7 @@ array.shuffle();
 //Exercise
 
 //Constructor
-
+/*
 function Stopwatch(){
 let startTime, endTime, running, duration = 0;
 
@@ -346,4 +346,74 @@ Stopwatch.prototype.start = function(){
  sw.duration =10;
 
  //OBS:. Premature optimization is the root of all evils
+}*/
+//////////////////////////////////////////////////////////////////////////
+//4- Prototypical Inheritance
+//1.Creating Your Own Prototypical Inheritance
+
+function Shape(){
+
 }
+
+Shape.prototype.duplicate = function(){
+    console.log('duplicate');
+}
+
+function Circle(radius){
+    this.radius= radius;
+}
+
+Circle.prototype =Object.create(Shape.prototype);
+
+Circle.prototype.draw = function(){
+    console.log('draw');
+}
+
+const s = new Shape();
+const c= new Circle(1);
+//////////////////////////////////////////////////////////////
+//2.Resetting the Constructor
+function Shape(){
+
+}
+
+Shape.prototype.duplicate = function(){
+    console.log('duplicate');
+}
+
+function Circle(radius){
+    this.radius= radius;
+}
+
+Circle.prototype =Object.create(Shape.prototype);
+
+Circle.prototype.draw = function(){
+    console.log('draw');
+}
+
+const s = new Shape();
+const c= new Circle(1);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
