@@ -701,7 +701,7 @@ const c = new Circle(1);
 const key = Object.getOwnPropertySymbols(c)[0];
 console.log(c[key]);*/
 //6- Private Members Using WeakMaps
-const _radius = new WeakMap();
+/*const _radius = new WeakMap();
 const _move = new WeakMap();
 
 class Circle{
@@ -717,8 +717,24 @@ class Circle{
     }
 }
 const c = new Circle(1);
+*/
+//7- Getters ans Setters
+const _radius = new WeakMap();
 
+class Circle{
+    constructor(radius){
+        _radius.set(this, radius);
+       }
+       get radius(){
+           return _radius.get(this);
+       }
+       set radius(value){
+           if(value <= 0) throw new Error('Invalid radius');
+           _radius.set(this,value);
+       }
 
+}
+const c = new Circle(1);
 
 
 
