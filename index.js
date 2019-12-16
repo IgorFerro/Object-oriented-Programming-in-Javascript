@@ -644,6 +644,7 @@ const Square = class {
 */
 //3- Static Methods
 //Ex : 1
+/*
 class Circle{
     constructor(radius){
         this.radius=radius;
@@ -658,8 +659,31 @@ draw(){
     }
 }
 const circle = Circle.parse('{"radius":1}');
-console.log(circle);
+console.log(circle);*/
+//4- The This Keyword
+//EX: 1
+/*
+'use strict'
+const Circle =function(){
+    this.draw = function(){console.log(this);}
+};
+const c = new Circle();
+// Method Call
+c.draw();
 
+const draw = c.draw;
+
+//Function Call
+draw();*/
+//Ex 2 ES6
+class Circle{
+draw(){
+    console.log(this);
+}
+}
+const c = new Circle();
+const draw = c.draw;
+draw();
 
 
 
