@@ -590,7 +590,7 @@ function HtmlSelectElement(items = []){
    HtmlSelectElement.prototype =new   HtmlElement();*/
 ///////////////////////////////////////////////////////////////////
 ///12- Exercise- Polymorphism
-this.render = function(){
+/*this.render = function(){
     return`<select>${this.Map(item=>`
     <option>${item}</opttion>`).join('')}
     </select>`;
@@ -605,6 +605,60 @@ function HtmlImageElement(src){
 }
 HtmlImageElement.prototype=new HTMLElement();
 HtmlImageElement.prototype.constructor= HtmlImageElement;
+*/
+////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////
+///ES6 CLASSES
+//1- ES6 Classes
+/*class Circle{
+    constructor(radius){
+        this.radius = radius;
+        this.move =function(){}
+    }
+    draw(){
+        console.log('draw');
+    }
+    
+}
+
+const c = new Circle(1);
+*/
+
+//2-Hoisting Functions
+sayHello();
+//Function Delcaration are hoisting
+function sayHello(){}
+
+//Function Expression are no hoisting
+const sayGoodbye = function(){};
+
+//2.1- Hoisting Class
+
+//Class Declaration not hoisting
+class Circle {
+
+}
+//Class Expression
+const Square = class {
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
