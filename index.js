@@ -719,7 +719,7 @@ class Circle{
 const c = new Circle(1);
 */
 //7- Getters ans Setters
-const _radius = new WeakMap();
+/*const _radius = new WeakMap();
 
 class Circle{
     constructor(radius){
@@ -735,8 +735,27 @@ class Circle{
 
 }
 const c = new Circle(1);
+*/
+//7 -Inheritance
+class Shape{
+    constructor(color){
+        this.color = color;
+    }
+    move(){
+        console.log('move')
+    }
+}
 
-
+class Circle extends Shape{
+    constructor(color,radius){
+        super(color);
+        this.radius = radius;
+    }
+    draw(){
+        console.log('draw')
+    }
+}
+const c = new Circle('red', 1);
 
 
 
