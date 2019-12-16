@@ -623,7 +623,7 @@ HtmlImageElement.prototype.constructor= HtmlImageElement;
 
 const c = new Circle(1);
 */
-
+/*
 //2-Hoisting Functions
 sayHello();
 //Function Delcaration are hoisting
@@ -641,9 +641,24 @@ class Circle {
 //Class Expression
 const Square = class {
 };
-
-
-
+*/
+//3- Static Methods
+//Ex : 1
+class Circle{
+    constructor(radius){
+        this.radius=radius;
+    }
+// Instance Method
+draw(){
+    }
+    //Static Method use to create a utilily functions that ar not tied to a particular object
+    static parse(src){
+        const radius = JSON.parse(str).radius;
+        return new Circle(radius);
+    }
+}
+const circle = Circle.parse('{"radius":1}');
+console.log(circle);
 
 
 
