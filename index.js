@@ -758,7 +758,7 @@ class Circle extends Shape{
 const c = new Circle('red', 1);
 */
 //8 -Method Riding
-class Shape{
+/*class Shape{
     move(){
         console.log('move')
     }
@@ -771,7 +771,40 @@ class Circle extends Shape{
 
 }
 const c = new Circle();
+*/
+//9- Exercise
+const _items = new WeakMap();
 
+class Stack {
+    constructor() {
+        _items.set(this, []);
+    }
+
+    push(obj) {
+        _items.get(this).push(obj);
+    }
+
+    pop(){
+        const items = _items.get(this);
+
+        if(_items.get(this).length === 0)
+        throw new Error('Stack is empty.');
+
+        return _items.pop();
+    }
+
+    peek() {
+        const items = _items.get(this);
+
+        if(items.length === 0)
+        throw new Error('Stack is Empty.');
+
+        return items[items.length -1];
+    }
+    get count(){
+        return _items.get(this).length;
+    }
+}
 
 
 
