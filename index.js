@@ -737,7 +737,7 @@ class Circle{
 const c = new Circle(1);
 */
 //7 -Inheritance
-class Shape{
+/*class Shape{
     constructor(color){
         this.color = color;
     }
@@ -756,8 +756,21 @@ class Circle extends Shape{
     }
 }
 const c = new Circle('red', 1);
+*/
+//8 -Method Riding
+class Shape{
+    move(){
+        console.log('move')
+    }
+}
+class Circle extends Shape{
+    move(){
+        super.move();
+        console.log('circle move');
+    }
 
-
+}
+const c = new Circle();
 
 
 
