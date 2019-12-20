@@ -809,8 +809,9 @@ class Stack {
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////ES6 Modules
 //1-Modules
-const Circle = require('./circle');
+//const Circle = require('./circle'); CommonJs Modules
 
+import {Circle} from './circle2.js'  //ES6 Modules
 const c = new Circle(10);
 c.draw();
 
