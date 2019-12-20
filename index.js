@@ -773,6 +773,7 @@ class Circle extends Shape{
 const c = new Circle();
 */
 //9- Exercise
+/*
 const _items = new WeakMap();
 
 class Stack {
@@ -804,7 +805,17 @@ class Stack {
     get count(){
         return _items.get(this).length;
     }
-}
+}*/
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////ES6 Modules
+//1-Modules
+const Circle = require('./circle');
+
+const c = new Circle(10);
+c.draw();
+
+
+
 
 
 
