@@ -1,0 +1,30 @@
+{
+  "name": "Object-oriented-Programming-in-Javascript",
+  "version": "1.0.0",
+  "description": "Object-oriented Programming in Javascript",
+  "main": "index.js",
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
+    "babel-preset-env": "^1.7.0",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "webpack": "^4.41.4",
+    "webpack-cli": "^3.3.10"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "build":"webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IgorFerro/Object-oriented-Programming-in-Javascript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IgorFerro/Object-oriented-Programming-in-Javascript/issues"
+  },
+  "homepage": "https://github.com/IgorFerro/Object-oriented-Programming-in-Javascript#readme"
+}
